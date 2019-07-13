@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "programming.monster"
+version = "0.1.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "^2.2"
+psycopg2-binary = "^2.8"
+python-dotenv = "^0.10.3"
+sentry-sdk = "^0.10.1"
+Jinja2 = "^2.10"
+Babel = "^2.7"
+python-slugify = "^3.0"
+marshmallow = "=3.0.0rc8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.4"
+django-debug-toolbar = "^2.0"
