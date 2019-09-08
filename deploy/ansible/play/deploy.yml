@@ -1,0 +1,51 @@
+---
+- hosts: prod
+  vars_files:
+    - ../vars.json
+  remote_user: root
+  environment:
+    NODE_ENV: production
+  tasks:
+
+    - name: checkout repository
+      git:
+        repo={{ git_repo }}
+        dest={{ dest }}
+        version={{ version }}
+        accept_hostkey=true
+
+    # build node bundle locally. Allowing not to install npm on remote machine
+    - name: npm build bundle
+      command: /usr/local/bin/npm run build
+      args:
+        chdir: "{{ repo_dir }}"
+      delegate_to: localhost
+
+    - copy:
+        src: "{{ repo_dir }}/promonster/static/build/"
+        dest: "{{ dest }}/promonster/static/build/"
+
+    - copy:
+        src: "{{ repo_dir }}/.env-production"
+        dest: "{{ dest }}/.env"
+
+    - name: install python requirements
+      shell: ". {{ pyenv_activate }} && poetry install"
+      args:
+        chdir: "{{ dest }}"
+
+    - name: run migrations
+      django_manage:
+        command=migrate
+        app_path={{ dest }}
+        virtualenv={{ virtualenv }}
+
+    - name: collect static
+      django_manage:
+        command="collectstatic --noinput"
+        app_path={{ dest }}
+        virtualenv={{ virtualenv }}
+
+    - file:
+        state: touch
+        path: "{{ dest }}/uwsgi.ini"

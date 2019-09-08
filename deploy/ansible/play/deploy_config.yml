@@ -1,0 +1,27 @@
+---
+- hosts: prod
+  vars_files:
+    - ../vars.json
+  remote_user: root
+  tasks:
+
+    - file:
+        state: link
+        src: /root/promonster/uwsgi.ini
+        dest: /etc/uwsgi/apps-enabled/promonster.ini
+
+    - template:
+        src: "{{ playbook_dir }}/../../hidden/templates/nginx.template"
+        dest: /etc/nginx/sites-available/promonster
+        owner: root
+        group: root
+        mode: "u=rw,g=r,o=r"
+
+    - file:
+        state: link
+        src: /etc/nginx/sites-available/promonster
+        dest: /etc/nginx/sites-enabled/promonster
+
+    - service:
+        name: nginx
+        state: reloaded

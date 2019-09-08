@@ -1,0 +1,18 @@
+---
+- hosts: prod
+  vars_files:
+    - ../vars.json
+  remote_user: root
+  environment:
+    NODE_ENV: production
+  tasks:
+
+    - name: Run pip freeze
+      shell: . /root/.pyenv/versions/promonster/bin/activate && pip freeze
+      args:
+        executable: /bin/bash
+      register: output
+
+    - name: Echo
+      debug:
+        var: output

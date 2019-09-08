@@ -165,16 +165,6 @@ ENV/
 .idea/
 /staticfiles
 
-# project specific ignore
-media/
-media/images/
-.DS_STORE
-.lets_backup
-dumps/
-# place for builded static
-promonster/static/build
-
-
 # ansible retry
 *.retry
 # virtualenv directory
@@ -214,3 +204,13 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+
+# project specific ignore
+media/
+media/images/
+.DS_STORE
+.lets_backup
+dumps/
+# place for builded static
+promonster/static/build
+hidden/

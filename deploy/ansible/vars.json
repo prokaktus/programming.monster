@@ -1,0 +1,11 @@
+{
+  "git_repo": "git@github.com:prokaktus/programming.monster.git",
+  "dest": "/root/promonster",
+  "virtualenv": "/root/.pyenv/versions/promonster",
+  "pyenv_location": "/root/.pyenv/versions/promonster/",
+  "pyenv_version": "{{ pyenv_location }}/bin/python3",
+  "pyenv_activate": "{{ pyenv_location }}/bin/activate",
+  "version": "master",
+  "prefix": "promonster: ",
+  "repo_dir": "{{ playbook_dir }}/../../.."
+}

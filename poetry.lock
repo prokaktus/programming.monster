@@ -1,5 +1,13 @@
 [[package]]
 category = "dev"
+description = "Radically simple IT automation"
+name = "ansible"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
+version = "2.8.4"
+
+[[package]]
+category = "dev"
 description = "Atomic file writes."
 name = "atomicwrites"
 optional = false
@@ -185,6 +193,14 @@ python-versions = "*"
 version = "2019.1"
 
 [[package]]
+category = "dev"
+description = "YAML parser and emitter for Python"
+name = "pyyaml"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "5.1.2"
+
+[[package]]
 category = "main"
 description = "Python client for Sentry (https://getsentry.com)"
 name = "sentry-sdk"
@@ -237,10 +253,11 @@ python-versions = ">=2.7"
 version = "0.5.2"
 
 [metadata]
-content-hash = "f7a1b586d40aab6aaf278399445cbe8113b3a17ba397b3061b75e8698ffebec9"
+content-hash = "2628a67f3eb29e9a1cec5294a20a1433a5190c20f9c654dfc257f8449c695537"
 python-versions = "^3.7"
 
 [metadata.hashes]
+ansible = ["a0153e2de3619b7e307df179cd91a3c3804cf1fe048273fe4ea5238b76679ff1"]
 atomicwrites = ["03472c30eb2c5d1ba9227e4c2ca66ab8287fbfbbda3888aa93dc2e28fc6811b4", "75a9445bac02d8d058d5e1fe689654ba5a6556a1dfd8ce6ec55a0ed79866cfa6"]
 attrs = ["69c0dbf2ed392de1cb5ec704444b08a5ef81680a61cb899dc08127123af36a79", "f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"]
 babel = ["af92e6106cb7c55286b25b38ad7695f8b4efb36a90ba483d7f7a6628c46158ab", "e86135ae101e31e2c8ec20a4e0c5220f4eed12487d5cf3f78be7e98d3a57fc28"]
@@ -260,6 +277,7 @@ pytest = ["3f193df1cfe1d1609d4c583838bea3d532b18d6160fd3f55c9447fdca30848ec", "e
 python-dotenv = ["debd928b49dbc2bf68040566f55cdb3252458036464806f4094487244e2a4093", "f157d71d5fec9d4bd5f51c82746b6344dffa680ee85217c123f4a0c8117c4544"]
 python-slugify = ["57163ffb345c7e26063435a27add1feae67fa821f1ef4b2f292c25847575d758"]
 pytz = ["303879e36b721603cc54604edcac9d20401bdbe31e1e4fdee5b9f98d5d31dfda", "d747dd3d23d77ef44c6a3526e274af6efeb0a6f1afd5a69ba4d5be4098c8e141"]
+pyyaml = ["0113bc0ec2ad727182326b61326afa3d1d8280ae1122493553fd6f4397f33df9", "01adf0b6c6f61bd11af6e10ca52b7d4057dd0be0343eb9283c878cf3af56aee4", "5124373960b0b3f4aa7df1707e63e9f109b5263eca5976c66e08b1c552d4eaf8", "5ca4f10adbddae56d824b2c09668e91219bb178a1eee1faa56af6f99f11bf696", "7907be34ffa3c5a32b60b95f4d95ea25361c951383a894fec31be7252b2b6f34", "7ec9b2a4ed5cad025c2278a1e6a19c011c80a3caaac804fd2d329e9cc2c287c9", "87ae4c829bb25b9fe99cf71fbb2140c448f534e24c998cc60f39ae4f94396a73", "9de9919becc9cc2ff03637872a440195ac4241c80536632fffeb6a1e25a74299", "a5a85b10e450c66b49f98846937e8cfca1db3127a9d5d1e31ca45c3d0bef4c5b", "b0997827b4f6a7c286c01c5f60384d218dca4ed7d9efa945c3e1aa623d5709ae", "b631ef96d3222e62861443cc89d6563ba3eeb816eeb96b2629345ab795e53681", "bf47c0607522fdbca6c9e817a6e81b08491de50f3766a7a0e6a5be7905961b41", "f81025eddd0327c7d4cfe9b62cf33190e1e736cc6e97502b3ec425f574b3e7a8"]
 sentry-sdk = ["1db9c4653e71d39ff3557c0981d5fb5f43a43e3a830fcf5e21a37c97f7bce6bb", "7e24f3ec1f4c909306d1b97373fe5caa942f54009acdcfa4d1ee6671f626bbe9"]
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 sqlparse = ["40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177", "7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"]
