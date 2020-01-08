@@ -63,7 +63,8 @@ INSTALLED_APPS = [
     'taggit',
 
     'apps.base',
-    'apps.users'
+    'apps.users',
+    'apps.articles',
 ]
 
 MIDDLEWARE = [
