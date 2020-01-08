@@ -6,7 +6,7 @@ authors = []
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Django = "3.0.1"
+Django = "2.2"
 psycopg2-binary = "^2.8"
 python-dotenv = "^0.10.3"
 sentry-sdk = "^0.10.1"
@@ -14,6 +14,7 @@ Jinja2 = "^2.10"
 Babel = "^2.7"
 python-slugify = "^3.0"
 djangorestframework = "^3.11.0"
+wagtail = "^2.7.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.4"
