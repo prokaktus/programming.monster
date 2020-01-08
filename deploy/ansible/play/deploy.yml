@@ -29,6 +29,11 @@
         src: "{{ repo_dir }}/.env-production"
         dest: "{{ dest }}/.env"
 
+    - name: install poetry
+      shell: ". {{ pyenv_activate }} && pip install poetry"
+      args:
+        chdir: "{{ dest }}"
+
     - name: install python requirements
       shell: ". {{ pyenv_activate }} && poetry install"
       args:
