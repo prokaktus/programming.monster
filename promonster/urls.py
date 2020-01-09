@@ -28,8 +28,8 @@ urlpatterns = [
     path('articles/', include(wagtail_urls)),
 
     # admin section
-    path('hidden/admin/', admin.site.urls),
-    path('hidden/cms/', include(wagtailadmin_urls)),
+    path(f'{settings.ADMIN_PREFIX}/admin/', admin.site.urls),
+    path(f'{settings.ADMIN_PREFIX}/cms/', include(wagtailadmin_urls)),
 ]
 
 

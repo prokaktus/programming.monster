@@ -204,6 +204,10 @@ STATICFILES_STORAGE = 'promonster.storage.FileStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+# Deploy hidden configuration
+
+ADMIN_PREFIX = getenv('ADMIN_PREFIX', 'hidden')
+
 # Logging configuration
 
 LOGGING = {

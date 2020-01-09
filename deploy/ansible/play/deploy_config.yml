@@ -8,7 +8,7 @@
     - file:
         state: link
         src: /root/promonster/uwsgi.ini
-        dest: /etc/uwsgi/apps-enabled/promonster.ini
+        dest: /etc/uwsgi/vassals/promonster.ini
 
     - template:
         src: "{{ playbook_dir }}/../../hidden/templates/nginx.template"
