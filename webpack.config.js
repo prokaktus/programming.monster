@@ -14,7 +14,7 @@ const srcPath = path.resolve('frontend');
 const exportsModule = {
     mode: mode,
     entry: {
-        main: path.join(srcPath, 'main.js'),
+        main: path.join(srcPath, 'main.ts'),
     },
     output: {
         path: path.resolve(
