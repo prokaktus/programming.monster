@@ -14,7 +14,7 @@ class InfoPage(Page):
         ('image', ImageChooserBlock()),
         ('html', blocks.RawHTMLBlock()),
         ('markdown', MarkDownBlock()),
-    ])
+    ], blank=True)
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
