@@ -15,9 +15,11 @@ Babel = "^2.7"
 python-slugify = "^3.0"
 djangorestframework = "^3.11.0"
 wagtail = "^2.7.1"
+Markdown = "^3.1.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.4"
 django-debug-toolbar = "^2.0"
 ansible = "2.9.2"
 pyyaml = "^5.1"
+ipython = "^7.11.1"

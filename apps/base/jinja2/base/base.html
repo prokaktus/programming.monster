@@ -1,0 +1,109 @@
+{% import "base/macro.html" as macro with context %}
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <title>{% block title -%}{%- endblock %}{% block suffix %} | Programming.Monster{% endblock %}</title>
+  {{ macro.meta_tags(page) }}
+  {{ macro.favicons() }}
+  {% if canonical %}
+  <link rel="canonical" href="{{ canonical }}"/>
+  {% endif %}
+  {% block extra_link %}{% endblock %}
+
+  {# Global stylesheets #}
+
+  <link rel="stylesheet" type="text/css" href="{{static('css/bulma.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{static('build/main.bundle.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{static('css/bulmastyle.min.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body class="is-color5">
+{% block navbar %}
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" href="/">
+        <img src="{{ static('img/logo_white.png') }}" alt="Logo">
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{{ url('about') }}">
+          О проекте
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <!-- Nothing yet -->
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+<div class="container container__main">
+  {% block breadcrumbs %}
+    {{ macro.breadcrumbs() }}
+  {% endblock %}
+
+  {% block annotation %}
+  {% endblock %}
+
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+</div>
+{% block extra_content %}{% endblock %}
+
+<div class="updown">
+  <span class="fa fa-angle-up updown__btn--up"></span>
+</div>
+<div class="spacer-little"></div>
+{% block footer %}
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      © 2019–2020 <strong>Programming.Monster</strong>
+      <p>
+        Пишем код вместе!
+      </p>
+      <p>Happy Coding 👨🏻‍💻</p>
+    </p>
+  </div>
+</footer>
+{% endblock %}
+
+{% if RAVENJS_CONFIG %}
+<script src="https://cdn.ravenjs.com/3.22.1/raven.min.js" crossorigin="anonymous"></script>
+<script>Raven.config('{{ RAVENJS_CONFIG }}').install();</script>
+{% endif %}
+<script src="{{ static('build/main.bundle.js') }}"></script>
+
+{% block extra_js %}
+{# Override this in templates to add extra javascript #}
+{% endblock %}
+
+{% block analytics %}
+{% if GOOGLE_ANALYTICS %}
+{{ GOOGLE_ANALYTICS | safe }}
+{% endif %}
+{% if YANDEX_METRICA %}
+{{ YANDEX_METRICA | safe }}
+{% endif %}
+{% if TOP_MAILRU %}
+{{ TOP_MAILRU | safe }}
+{% endif %}
+{% endblock %}
+</body>
+</html>

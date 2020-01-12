@@ -5,12 +5,14 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 const isProduction = env === 'production';
+const mode = isProduction ? 'production' : 'development';
 
 
 const srcPath = path.resolve('frontend');
 
 
 const exportsModule = {
+    mode: mode,
     entry: {
         main: path.join(srcPath, 'main.js'),
     },

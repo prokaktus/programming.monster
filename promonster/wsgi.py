@@ -18,6 +18,6 @@ from dotenv import load_dotenv
 dotenv_path = os.path.join(dirname(dirname(os.path.abspath(__file__))), '.env')
 load_dotenv(dotenv_path)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "promonster.settings.base")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "promonster.settings.main")
 
 application = get_wsgi_application()

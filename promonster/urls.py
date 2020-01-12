@@ -22,8 +22,12 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
+from apps.articles.views import HomeView, AboutView
+
 
 urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
+    path('about/', AboutView.as_view(), name='about'),
     path('documents/', include(wagtaildocs_urls)),
     path('articles/', include(wagtail_urls)),
 
