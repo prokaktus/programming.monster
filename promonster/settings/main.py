@@ -184,13 +184,13 @@ TOP_MAILRU = getenv('TOP_MAILRU', '')
 
 # Sentry settings
 if not DEBUG:
-    RAVENJS_CONFIG = os.getenv('SENTRY_DSN_JS', '')
+    SENTRYJS_CONFIG = os.getenv('SENTRY_DSN_JS', '')
     sentry_sdk.init(
         getenv('SENTRY_DSN'),
         integrations=[DjangoIntegration()]
     )
 else:
-    RAVENJS_CONFIG = ''
+    SENTRYJS_CONFIG = ''
 
 
 # Static files (CSS, JavaScript, Images)

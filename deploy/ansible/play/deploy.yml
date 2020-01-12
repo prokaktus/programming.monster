@@ -35,7 +35,7 @@
         chdir: "{{ dest }}"
 
     - name: install python requirements
-      shell: ". {{ pyenv_activate }} && poetry install"
+      shell: ". {{ pyenv_activate }} && poetry install --no-dev"
       args:
         chdir: "{{ dest }}"
 
