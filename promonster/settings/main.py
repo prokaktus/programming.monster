@@ -172,6 +172,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_STORAGE = 'apps.base.static_loader.FileStorage'
+
 # Wagtail specific configuration
 WAGTAIL_SITE_NAME = 'Programming.Monster'
 
