@@ -1,7 +1,22 @@
+/* variables */
+
+/* media declaration */
+
+@custom-media --mobile (max-width: 1024px);
+@custom-media --phone (max-width 624px);
+
+/* common rules */
+
 .markdown-block {
     margin-bottom: 1em;
 }
 
 .container.container__main {
     margin-top: 2em;
+}
+
+@media(--mobile) {
+    .container.container__main {
+        margin-left: 2em;
+    }
 }
