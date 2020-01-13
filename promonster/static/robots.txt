@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /search/
+Disallow: /users/*
+Disallow: /goto/*
+
+Host: https://programming.monster
+Sitemap: https://programming.monster/sitemap.xml

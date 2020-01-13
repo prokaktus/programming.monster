@@ -7,5 +7,7 @@
   "pyenv_activate": "{{ pyenv_location }}/bin/activate",
   "version": "master",
   "prefix": "promonster: ",
-  "repo_dir": "{{ playbook_dir }}/../../.."
+  "repo_dir": "{{ playbook_dir }}/../../..",
+  "project": "promonster",
+  "db_name": "{{ project }}"
 }

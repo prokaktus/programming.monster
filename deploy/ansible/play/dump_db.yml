@@ -1,0 +1,17 @@
+---
+- hosts: prod
+  vars_files:
+    - ../vars.json
+  remote_user: root
+  tasks:
+
+    - name: make dump
+      shell:
+        pg_dump {{ db_name }} | gzip > /tmp/dump-{{ project }}-{{ ansible_date_time.date }}.sql.gz
+      become: yes
+      become_user: postgres
+
+    - fetch:
+        src: /tmp/dump-{{ project }}-{{ ansible_date_time.date }}.sql.gz
+        dest: "{{ playbook_dir }}/../../../dumps/dump-{{ ansible_date_time.date }}.sql.gz"
+        flat: yes
