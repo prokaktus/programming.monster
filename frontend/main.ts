@@ -1,4 +1,5 @@
 import './css/main.css';
+import './css/codehilite.css';
 
 function init() {
     const burger = <HTMLElement>document.querySelector('.burger')!;

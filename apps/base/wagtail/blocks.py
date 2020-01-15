@@ -13,8 +13,25 @@ class MarkDownBlock(blocks.TextBlock):
         md = markdown(
             value,
             extensions=[
-                'markdown.extensions.fenced_code',
-                'markdown.extensions.tables'
+                'markdown.extensions.tables',
+                'markdown.extensions.codehilite',
             ]
         )
-        return mark_safe('<div class="markdown-block">{}</div>'.format(md))
+        return mark_safe(f'<div class="markdown-block">{md}</div>')
+
+
+class CodeBlock(MarkDownBlock):
+
+    class Meta:
+        icon = 'code'
+
+    def render_basic(self, value, context=None):
+        md = markdown(
+            value,
+            extensions=[
+                'markdown.extensions.fenced_code',
+                'markdown.extensions.codehilite',
+            ]
+        )
+        return mark_safe(f'<div class="code-block">{md}</div>')
+

@@ -11,6 +11,13 @@ class HomeView(TemplateView):
         return render(request, self.template_name)
 
 
+class ArticlesIndexView(TemplateView):
+    template_name = 'articles/home.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
 class AboutView(TemplateView):
     template_name = 'articles/about.html'
 

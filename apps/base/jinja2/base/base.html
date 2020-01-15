@@ -37,6 +37,10 @@
     </div>
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-start">
+        {# I don't know how to pass it to wagtail by name #}
+        <a class="navbar-item" href="/articles/">
+          О проекте
+        </a>
         <a class="navbar-item" href="{{ url('about') }}">
           О проекте
         </a>
@@ -84,9 +88,9 @@
 </footer>
 {% endblock %}
 
-{% if RAVENJS_CONFIG %}
+{% if SENTRYJS_CONFIG %}
 <script src="https://cdn.ravenjs.com/3.22.1/raven.min.js" crossorigin="anonymous"></script>
-<script>Raven.config('{{ RAVENJS_CONFIG }}').install();</script>
+<script>Raven.config('{{ SENTRYJS_CONFIG }}').install();</script>
 {% endif %}
 <script src="{{ static('build/main.bundle.js') }}"></script>
 

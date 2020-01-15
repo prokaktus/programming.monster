@@ -92,7 +92,9 @@ TEMPLATES = [
                 'wagtail.images.jinja2tags.images',
             ],
             'environment': 'promonster.environment.jinja.build',
-            'context_processors': []
+            'context_processors': [
+                'promonster.context_processors.third_parties'
+            ]
         },
         'DIRS': [
             os.path.join(BASE_DIR, 'promonster', 'jinja2'),

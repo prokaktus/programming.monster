@@ -20,3 +20,17 @@
         margin-left: 2em;
     }
 }
+
+/* customize some codehilite settings */
+td.linenos {
+    width: 1em;
+}
+
+table.codehilitetable {
+    width: 100%;
+}
+
+table.codehilitetable td {
+    /* I have no choice */
+    padding: 0 !important;
+}
