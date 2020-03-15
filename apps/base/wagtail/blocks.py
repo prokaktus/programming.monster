@@ -34,4 +34,3 @@ class CodeBlock(MarkDownBlock):
             ]
         )
         return mark_safe(f'<div class="code-block">{md}</div>')
-

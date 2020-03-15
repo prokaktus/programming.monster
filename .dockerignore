@@ -1,0 +1,9 @@
+**
+!apps/
+!frontend/
+!promonster/
+!tests/
+!manage.py
+!poetry.lock
+!pyproject.toml
+!setup.cfg
