@@ -12,6 +12,6 @@ jobs:
         run: |
           echo 'Hello'
       - name: Test docker action
-        uses: actions/build-container
+        uses: actions/build-container@v1.0
         with:
           who-to-greet: 'Jonny'
