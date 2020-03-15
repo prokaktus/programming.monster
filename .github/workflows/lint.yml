@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
       - name: Hello message
         run: |
           echo 'Hello'
       - name: Test docker action
-        uses: actions/build-container@v1.0
+        uses: ./.github/actions/build-container@v1.0
         with:
           who-to-greet: 'Jonny'
