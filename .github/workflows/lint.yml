@@ -11,3 +11,7 @@ jobs:
       - name: Hello message
         run: |
           echo 'Hello'
+      - name: Test docker action
+        uses: actions/build-container
+        with:
+          who-to-greet: 'Jonny'
