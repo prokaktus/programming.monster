@@ -23,8 +23,8 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           cache: true
-          tags: 'latest,${{ env.GIT_SHA }}'
+          tags: 'latest,${{ env.GITHUB_SHA }}'
       - name:
-          uses: docker://prokaktus/programming.monster/repository${{ github.GITHUB_SHA }}
-          run: pytest
+        uses: docker://prokaktus/programming.monster/repository:{{ env.GITHUB_SHA }}
+        run: pytest
 
