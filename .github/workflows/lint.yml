@@ -9,6 +9,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Display env
+        run: echo ${{ github.GITHUB_SHA }}
+        shell: bash
       - name:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
@@ -17,7 +20,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
+          cache: true
           tags: 'latest,${{ github.GITHUB_SHA }}'
+#      - name:
+#          uses: docker://prokaktus/programming.monster/repository${{ github.GITHUB_SHA }}
 #          workdir: '../../../'
 #      - name: Test docker action
 #        uses: ./.github/actions/build-container
