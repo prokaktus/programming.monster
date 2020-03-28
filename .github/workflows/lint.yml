@@ -22,7 +22,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
-          cache: true
           tags: 'latest,${{ env.GIT_SHA }}'
       - name:
         uses: docker://prokaktus/programming.monster/repository:{{ env.GIT_SHA }}
