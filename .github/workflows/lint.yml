@@ -26,5 +26,6 @@ jobs:
           tags: 'latest,${{ env.GITHUB_SHA }}'
       - name:
         uses: docker://prokaktus/programming.monster/repository:{{ env.GITHUB_SHA }}
-        run: pytest
+        with:
+          entrypoint: pytest
 
