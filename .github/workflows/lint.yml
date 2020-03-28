@@ -16,8 +16,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: prokaktus/promonster/image
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: '../../../docker/base/Dockerfile'
           workdir: '../../../'
