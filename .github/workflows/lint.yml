@@ -9,17 +9,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Hello message
-        run: |
-          echo 'Hello'
       - name:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: prokaktus/programming.monster/build
+          name: prokaktus/programming.monster/repository
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
+          tags: 'latest,${{ GITHUB_SHA }}'
 #          workdir: '../../../'
 #      - name: Test docker action
 #        uses: ./.github/actions/build-container
