@@ -19,7 +19,7 @@ jobs:
         with:
           name: prokaktus/programming.monster/repository
           username: ${{ github.actor }}
-          password: ${{ secrets.GIT_SHA }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           cache: true
