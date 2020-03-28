@@ -21,7 +21,7 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           cache: true
-          tags: 'latest,${{ github.GITHUB_SHA }}'
+          tags: 'latest,$GITHUB_SHA'
 #      - name:
 #          uses: docker://prokaktus/programming.monster/repository${{ github.GITHUB_SHA }}
 #          workdir: '../../../'
