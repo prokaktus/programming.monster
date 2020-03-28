@@ -15,7 +15,7 @@ jobs:
       - name:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: prokaktus/promonster/image
+          name: prokaktus/programming.monster/build
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
