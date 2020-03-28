@@ -12,6 +12,8 @@ jobs:
       - name: Display env
         run: echo $GITHUB_SHA
         shell: bash
+      - name: SHA version
+          run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
@@ -21,7 +23,7 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           cache: true
-          tags: 'latest,${{ env.GITHUB_SHA }}'
+          tags: 'latest,${{ env.GIT_SHA }}'
 #      - name:
 #          uses: docker://prokaktus/programming.monster/repository${{ github.GITHUB_SHA }}
 #          workdir: '../../../'
