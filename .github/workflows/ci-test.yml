@@ -1,0 +1,17 @@
+name: Run tests
+
+on: [push]
+
+jobs:
+  tests:
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: SHA version
+        run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
+      - name:
+        uses: docker://prokaktus/programming.monster/repository:{{ env.GIT_SHA }}
+        with:
+          entrypoint: pytest

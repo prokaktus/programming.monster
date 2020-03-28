@@ -1,4 +1,4 @@
-name: Python lint
+name: Build Docker image
 
 on: [push]
 
@@ -23,7 +23,4 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           tags: 'latest,${{ env.GIT_SHA }}'
-      - name:
-        uses: docker://prokaktus/programming.monster/repository:{{ env.GIT_SHA }}
-        with:
-          entrypoint: pytest
+          cached: true
