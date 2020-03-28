@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Display env
-        run: echo ${{ github.GITHUB_SHA }}
+        run: echo $GITHUB_SHA
         shell: bash
       - name:
         uses: elgohr/Publish-Docker-Github-Action@master
