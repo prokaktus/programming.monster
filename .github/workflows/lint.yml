@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
-          tags: 'latest,${{ GITHUB_SHA }}'
+          tags: 'latest,$GITHUB_SHA'
 #          workdir: '../../../'
 #      - name: Test docker action
 #        uses: ./.github/actions/build-container
