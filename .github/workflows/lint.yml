@@ -19,13 +19,12 @@ jobs:
         with:
           name: prokaktus/programming.monster/repository
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GIT_SHA }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           cache: true
           tags: 'latest,${{ env.GITHUB_SHA }}'
       - name:
-        uses: docker://prokaktus/programming.monster/repository:{{ env.GITHUB_SHA }}
+        uses: docker://prokaktus/programming.monster/repository:{{ env.GIT_SHA }}
         with:
           entrypoint: pytest
-
