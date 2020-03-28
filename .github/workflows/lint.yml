@@ -13,7 +13,7 @@ jobs:
         run: echo $GITHUB_SHA
         shell: bash
       - name: SHA version
-          run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
+        run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
