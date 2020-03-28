@@ -24,10 +24,7 @@ jobs:
           dockerfile: 'docker/base/Dockerfile'
           cache: true
           tags: 'latest,${{ env.GIT_SHA }}'
-#      - name:
-#          uses: docker://prokaktus/programming.monster/repository${{ github.GITHUB_SHA }}
-#          workdir: '../../../'
-#      - name: Test docker action
-#        uses: ./.github/actions/build-container
-#        with:
-#          who-to-greet: 'Jonny'
+      - name:
+          uses: docker://prokaktus/programming.monster/repository${{ github.GITHUB_SHA }}
+          run: pytest
+
