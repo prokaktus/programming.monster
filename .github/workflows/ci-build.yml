@@ -15,33 +15,17 @@ jobs:
       - name: Display env
         run: echo $GITHUB_SHA
         shell: bash
-      - name: build image
-        uses: docker/build-push-action@v1
+      - name:
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          repository: prokaktus/programming.monster/repository
+          name: prokaktus/programming.monster/repository
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           tags: 'latest,${{ github.sha }}'
+          cache: true
 
-#    steps:
-#      - uses: actions/checkout@v1
-#      - name: Display env
-#        run: echo $GITHUB_SHA
-#        shell: bash
-#      - name: SHA version
-#        run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
-#      - name:
-#        uses: elgohr/Publish-Docker-Github-Action@master
-#        with:
-#          name: prokaktus/programming.monster/repository
-#          username: ${{ github.actor }}
-#          password: ${{ secrets.GITHUB_TOKEN }}
-#          registry: docker.pkg.github.com
-#          dockerfile: 'docker/base/Dockerfile'
-#          tags: 'latest,${{ env.GIT_SHA }}'
-#          cache: true
 
   tests:
 
