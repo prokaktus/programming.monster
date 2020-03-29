@@ -34,7 +34,7 @@ jobs:
       - name: SHA version
         run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name:
-        uses: ${{test}}
+        uses: ${{ github.actor }}
         with:
           entrypoint: pytest
         env:
