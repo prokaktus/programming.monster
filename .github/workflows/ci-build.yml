@@ -3,7 +3,7 @@ name: Build Docker image
 on: [push]
 env:
   REPO_URL: docker.pkg.github.com/prokaktus/programming.monster/repository
-  GIT_SHA: ${{ GITHUB_SHA }}
+  GIT_SHA: ${{ github.sha }}
 
 jobs:
   build:
