@@ -51,8 +51,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: SHA version
-        run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name: login
         uses: azure/docker-login@v1
         with:
