@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
-          tags: 'latest,${{ env.GITHUB_SHA }}'
+          tags: 'latest,$GITHUB_SHA'
           cache: true
 
 #    steps:
