@@ -24,7 +24,6 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           tags: 'latest,${{ github.sha }}'
-          always_pull: true
 
 #    steps:
 #      - uses: actions/checkout@v1
