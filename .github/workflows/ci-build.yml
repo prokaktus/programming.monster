@@ -34,9 +34,11 @@ jobs:
       - uses: actions/checkout@v1
       - name: SHA version
         run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
-      - name:
-        uses: ${{ github.actor }}
-        with:
-          entrypoint: pytest
-        env:
-          test: 'test'
+      - name: Run tests
+        run: $ docker run -it docker.pkg.github.com/prokaktus/programming.monster/repository:latest pytest
+#      - name:
+#        uses: ${{ github.actor }}
+#        with:
+#          entrypoint: pytest
+#        env:
+#          test: 'test'
