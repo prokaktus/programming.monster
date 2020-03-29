@@ -35,9 +35,9 @@ jobs:
       - name: SHA version
         run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name: login
-        uses: docker/login-action@v1
+        uses: azure/docker-login@v1
         with:
-          registry: docker.pkg.github.com
+          login-server: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Run tests
