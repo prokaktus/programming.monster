@@ -23,7 +23,7 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
           tags: 'latest,${{ env.GIT_SHA }}'
-          cached: true
+          cache: true
 
   tests:
 
@@ -35,7 +35,7 @@ jobs:
       - name: SHA version
         run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name: Run tests
-        run: docker run -it docker.pkg.github.com/prokaktus/programming.monster/repository:latest pytest
+        run: docker run docker.pkg.github.com/prokaktus/programming.monster/repository:latest pytest
 #      - name:
 #        uses: ${{ github.actor }}
 #        with:
