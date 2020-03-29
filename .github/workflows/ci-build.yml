@@ -3,6 +3,7 @@ name: Build Docker image
 on: [push]
 env:
   REPO_URL: docker.pkg.github.com/prokaktus/programming.monster/repository
+  GIT_SHA: ${GITHUB_SHA}
 
 jobs:
   build:
@@ -14,7 +15,7 @@ jobs:
       - name: Display env
         run: echo $GITHUB_SHA
         shell: bash
-      - name:
+      - name: build image
         uses: docker/build-push-action@v1
         with:
           repository: prokaktus/programming.monster/repository
@@ -22,8 +23,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: 'docker/base/Dockerfile'
-          tags: 'latest,$GITHUB_SHA'
-          cache: true
+          tags: 'latest,${{ env.GIT_SHA }}'
+          always_pull: true
 
 #    steps:
 #      - uses: actions/checkout@v1
