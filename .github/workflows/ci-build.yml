@@ -34,6 +34,6 @@ jobs:
       - name: SHA version
         run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name:
-        uses: docker://prokaktus/programming.monster/repository:${{ env.GITHUB_SHA }}
+        uses: 'docker://prokaktus/programming.monster/repository:${{ env.GIT_SHA }}'
         with:
           entrypoint: pytest
