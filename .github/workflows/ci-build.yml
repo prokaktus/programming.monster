@@ -34,6 +34,8 @@ jobs:
       - name: SHA version
         run: echo ::set-env name=GIT_SHA::$(echo ${GITHUB_SHA:10})
       - name:
-        uses: ${{ env.GIT_SHA }}
+        uses: ${{ test }}
         with:
           entrypoint: pytest
+        env:
+          test: 'test'
