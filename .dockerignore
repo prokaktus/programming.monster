@@ -6,3 +6,4 @@
 !manage.py
 !poetry.lock
 !pyproject.toml
+!setup.cfg

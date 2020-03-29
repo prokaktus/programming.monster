@@ -1,6 +1,3 @@
-from functools import partial
-from decimal import Decimal
-
 from django.contrib import messages
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import reverse
