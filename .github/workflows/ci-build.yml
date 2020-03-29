@@ -28,7 +28,6 @@ jobs:
 
 
   tests:
-
     runs-on: ubuntu-latest
     needs: build
 
@@ -43,12 +42,17 @@ jobs:
       - name: Run tests
         run: docker run $REPO_URL:$GIT_SHA pytest
 
-#  lint:
-#
-#    runs-on: ubuntu-latest
-#    need: build
-#
-#    steps:
-#      - uses: actions/checkout@v1
-#      - name:
+    lint:
+      runs-on: ubuntu-latest
+      needs: build
 
+      steps:
+        - uses: actions/checkout@v1
+        - name: login
+          uses: azure/docker-login@v1
+          with:
+            login-server: docker.pkg.github.com
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+        - name: Run linter
+          run: docker run $REPO_URL:$GIT_SHA flake8
