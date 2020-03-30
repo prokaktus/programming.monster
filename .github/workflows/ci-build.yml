@@ -71,8 +71,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            echo ${{ secrets.GITHUB_TOKEN }}
-            docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+            docker login docker.pkg.github.com -u ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }}
             cd /root/promonster/
             git fetch
             git checkout ${{ github.sha }}
