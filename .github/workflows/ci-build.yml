@@ -80,5 +80,5 @@ jobs:
             cd /root/promonster/
             git fetch
             git checkout ${{ github.sha }}
-            echo "debug sha: GIT_SHA"
+            echo "debug sha: $GIT_SHA"
             docker-compose -f docker-compose.prod.yml up
