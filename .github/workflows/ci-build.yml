@@ -70,4 +70,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: git pull ${{ github.ref }}
+          script: |
+            git fetch
+            git checkout ${{ github.sha }}
