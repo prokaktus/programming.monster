@@ -7,7 +7,7 @@ services:
     command:
       uwsgi --ini uwsgi_docker.ini
     environment:
-      DEBUG: false
+      DEBUG: 'false'
       SECRET_KEY: ${DJANGO_SECRET_KEY}
       SENTRY_DSN: ${DJANGO_SENTRY_DSN}
       ADMIN_PREFIX: ${DJANGO_ADMIN_PREFIX}
