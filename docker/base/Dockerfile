@@ -13,4 +13,4 @@ RUN poetry install
 
 COPY . /code/
 
-CMD ["python", "--version"]
+CMD ["uwsgi", "--ini", "uwsgi_docker.ini"]

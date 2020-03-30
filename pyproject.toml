@@ -17,6 +17,7 @@ djangorestframework = "3.11.0"
 wagtail = "2.7.1"
 Markdown = "3.1.1"
 Pygments = "2.5.2"
+uwsgi = "^2.0.18"
 
 [tool.poetry.dev-dependencies]
 pytest = "5.4.1"

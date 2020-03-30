@@ -9,4 +9,4 @@ services:
     ports:
       - "8000:8000"
     command:
-      echo Hello
+      uwsgi --ini uwsgi_docker.ini

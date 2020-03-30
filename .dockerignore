@@ -7,3 +7,4 @@
 !poetry.lock
 !pyproject.toml
 !setup.cfg
+!uwsgi_docker.ini

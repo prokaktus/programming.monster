@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: docker.pkg.github.com/prokaktus/programming.monster/repository:${GIT_SHA}
+    ports:
+      - "8000:8000"
+    command:
+      uwsgi --ini uwsgi_docker.ini
+    environment:
+      DEBUG: false
+      SECRET_KEY: ${DJANGO_SECRET_KEY}
+      SENTRY_DSN: ${DJANGO_SENTRY_DSN}
+      ADMIN_PREFIX: ${DJANGO_ADMIN_PREFIX}
