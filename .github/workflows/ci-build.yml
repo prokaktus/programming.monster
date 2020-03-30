@@ -71,5 +71,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            cd /root/promonster/
             git fetch
             git checkout ${{ github.sha }}
