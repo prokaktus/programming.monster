@@ -65,12 +65,16 @@ jobs:
       - uses: actions/checkout@v1
       - name: Run ssh command
         uses: appleboy/ssh-action@master
+        env:
+          GIT_SHA: ${{ github.sha }}
+          DJANGO_ALLOWED_HOSTS: '*'
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           envs: GIT_SHA
+          script_stop: true
           script: |
             docker login docker.pkg.github.com -u ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }}
             cd /root/promonster/
