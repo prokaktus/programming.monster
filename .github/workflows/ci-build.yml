@@ -73,11 +73,12 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          envs: GIT_SHA,DJANGO_ALLOWED_HOSTS
           script_stop: true
+          envs: GIT_SHA,DJANGO_ALLOWED_HOSTS
           script: |
             docker login docker.pkg.github.com -u ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }}
             cd /root/promonster/
             git fetch
             git checkout ${{ github.sha }}
+            echo "debug sha: GIT_SHA"
             docker-compose -f docker-compose.prod.yml up
