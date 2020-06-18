@@ -1,4 +1,4 @@
-name: Build Docker image
+name: Build Docker image and run tests
 
 on: [push]
 env:
