@@ -16,7 +16,7 @@
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
-    "@babel/core": "7.0.1",
+    "@babel/core": "7.20.12",
     "@babel/preset-env": "7.0.0",
     "autoprefixer": "7.1.4",
     "babel-loader": "8.0.2",
