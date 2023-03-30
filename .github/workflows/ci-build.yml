@@ -16,7 +16,7 @@ jobs:
         run: echo $GITHUB_SHA
         shell: bash
       - name:
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: prokaktus/programming.monster/repository
           username: ${{ github.actor }}
